@@ -16,12 +16,14 @@ import javax.xml.parsers.DocumentBuilderFactory;
  */
 public class Business {
 
-    private String dbName = ".Access";
+    private static String dbName = ".Access";
 
-    public String getDbName() {
+    private static final String mConfigPath = "E:/project/DesignPatternsDemo/designpatternsdemocode/src/main/java/com/lipy/AbstractFactory/dao/db.config";
+
+    public static String getDbName() {
         try {
             InputStream inputStream = new FileInputStream
-                    ("E:/project/DesignPatternsDemo/designpatternsdemocode/src/main/java/com/lipy/AbstractFactory/dao/db.config");
+                    (mConfigPath);
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document dom = builder.parse(inputStream);

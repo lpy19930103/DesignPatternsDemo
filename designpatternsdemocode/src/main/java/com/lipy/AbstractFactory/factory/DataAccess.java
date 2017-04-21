@@ -14,7 +14,7 @@ public class DataAccess {
     private static final String assemblyName = "com.lipy.AbstractFactory.server";
 
 //    private static final String db = ".SqlServer";
-    private static final String db = new Business().getDbName();
+    private static final String db = Business.getDbName();
 
     public static IUser createUser() {
         String className = assemblyName + db + "User";
