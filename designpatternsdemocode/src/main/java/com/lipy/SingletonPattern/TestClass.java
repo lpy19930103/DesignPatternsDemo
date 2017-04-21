@@ -1,6 +1,7 @@
 package com.lipy.SingletonPattern;
 
-public class TestClass {
+class TestClass {
+    
     public static void main(String[] args) {
         testSynchronizedInstance();
         testSingleton();
@@ -23,7 +24,7 @@ public class TestClass {
         }
     }
 
-    public static class SingletonRunable implements Runnable {
+    private static class SingletonRunable implements Runnable {
         @Override
         public void run() {
             Singleton synchronizedInstance2 = Singleton.getSynchronizedInstance2();

@@ -1,44 +1,44 @@
 package com.lipy.SingletonPattern;
 
 /**
- * å•ä¾‹æ¨¡å¼,ä¿è¯ä¸€ä¸ªç±»ä»…æœ‰ä¸€ä¸ªå®ä¾‹,å¹¶æä¾›ä¸€ä¸ªè®¿é—®å®ƒçš„å…¨å±€è®¿é—®ç‚¹.
+ * µ¥ÀıÄ£Ê½,±£Ö¤Ò»¸öÀà½öÓĞÒ»¸öÊµÀı,²¢Ìá¹©Ò»¸ö·ÃÎÊËüµÄÈ«¾Ö·ÃÎÊµã.
  * Created by lipy on 2017/4/21 0021.
  */
-public  class Singleton {
+class Singleton {
 
-    private static Singleton instance;//æ‡’æ±‰å¼
+    private static Singleton instance;//ÀÁººÊ½
 
-//    private static Singleton instance = new Singleton();//é¥¿æ±‰å¼
+//    private static Singleton instance = new Singleton();//¶öººÊ½
 
     private Singleton() {
 
     }
 
-    //æ‡’æ±‰å¼
-    public static Singleton getInstance() {
+    //ÀÁººÊ½
+    static Singleton getInstance() {
         if (instance == null) {
             instance = new Singleton();
         }
         return instance;
     }
 
-//    //é¥¿æ±‰å¼
+//    //¶öººÊ½
 //    public static Singleton getInstance() {
 //        return instance;
 //    }
 
 
 
-    //å¤šçº¿ç¨‹ åŒæ­¥åŠ è½½
-    public synchronized static Singleton getSynchronizedInstance1() {
+    //¶àÏß³Ì Í¬²½¼ÓÔØ
+     synchronized static Singleton getSynchronizedInstance1() {
         if (instance == null) {
             instance = new Singleton();
         }
         return instance;
     }
 
-    //å¤šçº¿ç¨‹ å¤šé‡åˆ¤æ–­ ä¸è®©çº¿ç¨‹æ¯æ¬¡éƒ½åŠ é”,åªæ˜¯åœ¨å®ä¾‹è¿èƒŒåˆ›å»ºçš„æ—¶å€™åœ¨åŠ é”å¤„ç†.åŒæ—¶ä¹Ÿèƒ½ä¿è¯çº¿ç¨‹å®‰å…¨.
-    public static Singleton getSynchronizedInstance2() {
+    //¶àÏß³Ì ¶àÖØÅĞ¶Ï ²»ÈÃÏß³ÌÃ¿´Î¶¼¼ÓËø,Ö»ÊÇÔÚÊµÀıÎ¥±³´´½¨µÄÊ±ºòÔÚ¼ÓËø´¦Àí.Í¬Ê±Ò²ÄÜ±£Ö¤Ïß³Ì°²È«.
+     static Singleton getSynchronizedInstance2() {
         if (instance == null){
             synchronized (Singleton.class){
                 if (instance == null) {
