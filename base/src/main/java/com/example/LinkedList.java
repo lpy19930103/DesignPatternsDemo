@@ -32,6 +32,7 @@ public class LinkedList {
             while (cur != null) {
                 if (cur.object.equals(object)) {
                     pre.next = cur.next;
+                    break;
                 }
                 pre = cur;
                 cur = cur.next;

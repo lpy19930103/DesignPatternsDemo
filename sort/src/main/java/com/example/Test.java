@@ -12,9 +12,9 @@ public class Test {
     private static final String ts = "abc";
 
     public static void main(String[] args) {
-//        Sort.insertSort(NUMBERS);
+        BinarySearch.binarySearch(Sort.insertSort(NUMBERS),23);
 //        Sort.selectSort(NUMBERS);
 //        Sort.bubbleSort(NUMBERS);
-        Match.violentMatch(bs, ts);
+//        Match.violentMatch(bs, ts);
     }
 }

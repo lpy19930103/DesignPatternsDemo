@@ -5,7 +5,7 @@ import java.util.Arrays;
 class Sort {
 
     //插入排序
-    static void insertSort(int[] array) {
+    static int[] insertSort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             int temp = array[i];
             int j = i - 1;
@@ -15,7 +15,7 @@ class Sort {
             array[j + 1] = temp;
         }
         System.out.println(Arrays.toString(array));
-
+        return array;
     }
 
     //选择排序
